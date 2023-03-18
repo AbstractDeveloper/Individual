@@ -1,0 +1,126 @@
+.TL{
+    position: relative;
+    top: 8px;
+    left: 16px;
+ } 
+ .TR {
+    position: absolute;
+    top: 250px;
+    left: 660px;
+ }
+
+ #welcome-form {
+    align-self: flex-start;
+    display: grid;
+    align-items: center;
+}
+
+.M {
+    position: relative;
+    right: 255px;
+    top: 100px;
+}
+
+.H {
+    position: relative;
+    left: 180px;
+    top: 100px;
+}
+
+h1 {
+    font-size: 30px;
+    font-family: verdana;
+    color: black;
+    text-align: right;
+}
+
+h2 {
+    font-size: 30px;
+    font-family: verdana;
+    color: black;
+    text-align: center;
+    border: dotted;
+    border-color: blue;
+    border-radius: 10px;
+}
+
+
+.card {
+    /* transform: rotate(4deg); */
+    /* width: 360px; */
+    border-radius: 30px; 
+}
+
+.flexbox {
+    display: flex;
+}
+body {
+    background-color:red;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #38444d;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+  }
+  
+  li.dropdown {
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {background-color: #f1f1f1;}
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+.text {
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    size: 830px;
+  }
+
+  .footer {
+    position: fixed;
+    left: 10px;
+    bottom: 5px;
+    right: 10px; 
+    width: 95%;
+    background-color: gray;
+    color: white;
+    text-align: center;
+  }
