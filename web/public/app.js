@@ -1,5 +1,5 @@
-// $('#navbar').load('navbar.html');
-// $('#foot').load('footer.html');
+$('#navbar').load('navbar.html');
+$('#foot').load('footer.html');
 
 const API_URL = 'http://localhost:4000/api';
 $.get(`${API_URL}/devices_light`)
@@ -53,7 +53,8 @@ $('#add-device').on('click', () => {
 
   const body = {
     device_name,
-    quantity
+    quantity,
+    description
   };
 
   $.post(`${API_URL}/devices_light`, body)
@@ -71,7 +72,8 @@ $('#add-device1').on('click', () => {
 
   const body = {
     device_name,
-    quantity
+    quantity,
+    description
   };
 
   $.post(`${API_URL}/devices_ac`, body)
@@ -89,7 +91,8 @@ $('#add-device2').on('click', () => {
 
   const body = {
     device_name,
-    quantity
+    quantity,
+    description
   };
 
   $.post(`${API_URL}/devices_security`, body)
