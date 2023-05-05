@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Line Graph with Highcharts and API Data</title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+  body {
+    background-color: lightblue;
+  }
+
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  .fade-in {
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+  }
+
+  /* Table styles */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  th,
+  td {
+    text-align: left;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  th {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  /* Center login form */
+  form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  label {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  input[type=text],
+  input[type=password] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+  }
+
+  input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            
+            width: 100%;top: 0;
+            display: flex;
+            justify-content: space-around;
+            height: 50px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        li {
+      margin: 10 10px;
+    }
+    a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      font-family: Arial, sans-serif;
+    }
+
+    a:hover {
+      transform: scale(1.1);
+    }
+        .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+  
+    .dropdown-content a {
+      color: black;
+      font-size: 15px;
+      padding: 6px 8px;
+      text-decoration: none;
+      display: block;
+    }
+  
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+</style>
+    </style>
+</head>
+
+<body>
+  <ul>
+    <li><a href="/welcome">Home</a></li>
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Devices</a>
+      <div class="dropdown-content">
+        <a href="/register-device">Add Device</a>
+        <a href="/delete-device">Delete Device</a>
+      </div>
+    </li>
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Products</a>
+      <div class="dropdown-content">
+        <a href="/lightning">Lighting</a>
+        <a href="/air-conditioning">Air-Conditioning</a>
+        <a href="/security">Security</a>
+      </div>
+    </li>
+    <li><a href="/graph">Graph</a></li>
+    <li><a href="http://localhost:4000/">Help</a></li>
+
+  </ul>
+    <div id="container" style=" margin-top: 120px ;"></div>
+    <script>
+        // Make API call to retrieve data
+        fetch('http://localhost:7000/sensor')
+            .then(response => response.json())
+            .then(data => {
+                // Format the data for Highcharts
+                const chartData = data.map(item => [item.time, item.value]);
+                console.log(chartData);
+                // Create the Highcharts chart
+                Highcharts.chart('container', {
+                    title: {
+                        text: 'Sensor Data'
+                    },
+                    xAxis: {
+                        type: 'datetime'
+                    },
+                    series: [{
+                        name: 'Value',
+                        data: chartData
+                    }]
+                });
+            });
+
+    </script>
+</body>
+
+</html>
+<style>
+   
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  height: 50px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+</style>

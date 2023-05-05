@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="A web page about IoT Applications" />
+  <meta name="author" content="ENTER YOUR NAME HERE" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <style>
+    * {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-image: url(second.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+}
+
+h1{
+  margin-top: -1%;
+}
+
+/* Navigation Bar */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  height: 50px;
+  animation: fadeIn 1s;
+}
+
+nav li {
+  text-align: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  transform: scale(1.1);
+}
+
+/* Login Form */
+form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: left;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1s;
+  width: 80%; /* Set default width */
+  max-width: 600px; /* Set maximum width */
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+input[type="text"],
+input[type="password"] {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 1.2rem;
+  border: none;
+  border-bottom: 2px solid #ccc;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+/* Background Blur */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(second.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  filter: blur(5px);
+  z-index: -1;
+}
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes scaleIn {
+      from {
+        transform: scale(0);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+
+    input[type="submit"]#register-btn, input[type="button"] {
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    input[type="submit"]#register-btn:hover, input[type="button"]:hover {
+      background-color: #3e8e41;
+    }
+
+    .formT{
+      width:25%;
+      height:40%;
+      border-radius: 20px;
+      background-color: rgba(168, 149, 130, 0.771);
+    }
+    .buttons{
+      position: relative;
+      margin-left: 20%;
+    }
+    @media screen and (max-width: 768px) {
+  body {
+    background-size: contain;
+    background-position: top;
+  }
+
+  nav ul {
+    flex-direction: column;
+    height: auto;
+  }
+
+  nav li {
+    margin: 10px 0;
+  }
+
+  .formT {
+    width: 80%;
+    height: auto;
+  }
+
+  .buttons {
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  input[type="submit"]#register-btn, input[type="button"] {
+    margin-top: 20px;
+  }
+}
+
+  </style>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="/welcome">Home</a></li>
+    </ul>
+  </nav>
+  <form class="formT"action="/login" method="post">
+    <h1 style="text-align: center;">Login Form</h1>
+    <input type="text" name="username" id="username" placeholder="Enter your username">
+
+    <input type="password" name="password" id="password" placeholder="Enter your password">
+
+    <input type="submit" class="buttons"value="Login">
+    <input type="button" value="Register now" onclick="window.location.href='/lightning'">
+
+  </form>
+</body>
+
+</html>

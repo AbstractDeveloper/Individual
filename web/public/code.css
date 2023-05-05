@@ -54,9 +54,7 @@ h2 {
 .flexbox {
     display: flex;
 }
-body {
-    background-color:red;
-  }
+
 
   ul {
     list-style-type: none;

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta name="description" content="A web page about IoT Applications" />
@@ -9,39 +10,209 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="code.css">
+    <!-- <link rel="stylesheet" href="code.css"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+    <style>
+        .form-group {
+            margin: 0 auto;
+            width: 290px;
+        }
+
+        .form-group button {
+            width: 290px;
+            font-size: large;
+            transition: all 0.3s;
+        }
+
+        .form-group button:hover {
+            transform: scale(1.1);
+            background-color: darkgreen;
+        }
+
+        label {
+            font-family: Arial, Helvetica, sans-serif;
+            color: black;
+            font-size: large;
+        }
+
+        /* body {
+            background-color: lightblue;
+            animation: fadeIn 2s ease;
+        } */
+
+        /* @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            animation: slideIn 1s ease;
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-100%);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        } */
+
+        /* Example code snippet */
+        @keyframes float-up {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-100%);
+            }
+        }
+
+        .square {
+            animation: float-up 4s infinite;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            height: 50px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+         li {
+      margin: 0 10px;
+    }
+    a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    a:hover {
+      transform: scale(1.1);
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+  
+    .dropdown-content a {
+      color: black;
+      font-size: 15px;
+      padding: 6px 8px;
+      text-decoration: none;
+      display: block;
+    }
+  
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    body {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+    </style>
 </head>
+
 <body>
+    <ul>
+        <li><a href="/welcome">Home</a></li>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">Devices</a>
+          <div class="dropdown-content">
+            <a href="/register-device">Add Device</a>
+            <a href="/delete-device">Delete Device</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">Products</a>
+          <div class="dropdown-content">
+            <a href="/lightning">Lighting</a>
+            <a href="/air-conditioning">Air-Conditioning</a>
+            <a href="/security">Security</a>
+          </div>
+        </li>
+        <li><a href="/graph">Graph</a></li>
+        <li><a href="http://localhost:4000/">Help</a></li>
+    
+      </ul>
+    <br>
+    <h1>
+        <center>Register New IoT Device</center>
+    </h1>
+    <div class="form-group">
         <br>
-        <h1>
-            <center>Register New IoT Device</center>
-        </h1>
-        <div class="form-group">
-            <br>
-            <label for="user"><b>Model :</b></label>
-            <input type="text" placeholder="Enter Device Name" class="form-control" id="user" /><br>
+        <label for="user"><b>Model :</b></label>
+        <input type="text" placeholder="Enter Device Name" class="form-control" id="user" /><br>
 
-            <label for="name"><b>Device Name :</b></label>
-            <input type="text" class="form-control" placeholder="Enter the Model Number" id="name" />
-            <br>
-            
-            <button class="btn btn-success" id="add-device">
-                <center>Save To Light</center>
-            </button>
+        <label for="name"><b>Device Name :</b></label>
+        <input type="text" class="form-control" placeholder="Enter the Model Number" id="name" />
+        <br>
 
-            <br><br>
+        <button class="btn btn-success" id="add-device">
+            <center>Save To Light</center>
+        </button>
 
-            <button class="btn btn-success" id="add-device1">
-                <center>Save To AC</center>
-            </button>
+        <br><br>
 
-            <br><br>
+        <button class="btn btn-success" id="add-device1">
+            <center>Save To AC</center>
+        </button>
 
-            <button class="btn btn-success" id="add-device2">
-                <center>Save To Security</center>
-            </button>
-        </div>
+        <br><br>
+
+        <button class="btn btn-success" id="add-device2">
+            <center>Save To Security</center>
+        </button>
+    </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
     crossorigin="anonymous"></script>
@@ -49,21 +220,5 @@
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
     crossorigin="anonymous"></script>
 <script src="app.js"></script>
+
 </html>
-<style type="text/css">
-    .form-group {
-        margin: 0 auto;
-        width: 290px;
-    }
-
-    .form-group button {
-        width: 290px;
-        font-size: large;
-    }
-
-    label {
-        font-family: Arial, Helvetica, sans-serif;
-        color: black;
-        font-size: large;
-    }
-</style>

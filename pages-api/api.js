@@ -15,6 +15,12 @@ app.use(function (req, res, next) {
   next();
 });
 
+app.use(express.static(`${__dirname}/public/generated-docs`));
+
+app.get('/', (req, res) => {
+  res.sendFile(`${__dirname}/public/generated-docs/index`);
+});
+
 app.get('/api/devices_light', async (req, res) => {
   try {
     const devices = await Device_Light.find({});

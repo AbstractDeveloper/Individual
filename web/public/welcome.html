@@ -1,38 +1,195 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8" />
   <meta name="description" content="A web page about IoT Applications" />
-  <meta name="author" content="ENTER YOUR NAME HERE" />
+  <meta name="author" content="Sahil Guglani" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="welcome.css"> -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" /> -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      position: relative;
+      overflow: hidden;
+      background-repeat: no-repeat;
+      background-image: url(bg.jpg);
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+    }
+
+    p {
+      color: #333;
+      animation: fadeIn 2s ease-in-out;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 5px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 50px;
+      font-weight: 500;
+      font-family: verdana;
+      color: #3875efd2;
+      text-align: center;
+      animation: slideInRight 1s ease-in-out;
+      margin-bottom: 20px;
+      margin-left: 8%;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .move {
+      animation: pulse 2s infinite;
+      transition: all 0.3s;
+    }
+
+    .move:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInRight {
+      0% {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 28px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #38444d;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    li {
+      float: left;
+    }
+
+    li a,
+    .dropbtn {
+      display: inline-block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+
+    li a:hover,
+    .dropdown:hover .dropbtn {
+      background-color: red;
+    }
+
+    li.dropdown {
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .text {
+      margin-left: 20%;
+    }
+
+    .paragraphT {
+      background-color: rgba(202, 227, 240, 0.725);
+    }
+
+  </style>
   <title>Welcome Page</title>
 </head>
-<body>
-  <div id="body">
-    <h1> Welcome to the IoT World</h1>
-    <br><br>
-    <div class="a">
-      <p>Smart buildings tend to provide a healthier, productive <br>
-        and comfortable space for the people staying in. Be it <br>
-        a workspace or residence, with advanced climatic and<br>
-        lighting controls, smart buildings improve the indoor <br>
-        air quality and lighting in a significant way.</p>
-      <br><br><br><br><br><br><br><br><br>
-      <button onclick="window.location.href = '/second-page.html';"> MOVE NEXT </button>
 
-      <script src="app.js"></script>
+<body>
+  
+  <div id="body">
+    <br><br>
+    <div class="container">
+      <h1 id="welcome">Welcome to the IoT World</h1>
+      <div class="row">
+        <div class="col-md-8 text">
+          <p class="paragraphT">Smart buildings tend to provide a healthier, productive and comfortable space for the
+            people staying in. Be
+            it a workspace or residence, with advanced climatic and lighting controls, smart buildings improve the
+            indoor air quality and lighting in a significant way.</p>
+        </div>
+      </div>
+      <div class="button-container">
+        <button class="btn btn-primary move" onclick="window.location.href = '/lightning';">NEXT</button>
+      </div>
     </div>
   </div>
+  <script src="app.js"></script>
 </body>
-</html>
-<style>
-  p {
-    color: white;
-  }
 
-  div.a {
-    text-align: right;
-  }
-</style>
+</html>

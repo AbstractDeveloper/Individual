@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="A web page about IoT Applications" />
+  <meta name="author" content="ENTER YOUR NAME HERE" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="code.css">
+  <title>Welcome Page</title>
+  
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="/welcome">Home</a></li>
+      <li><a href="/conatct">Contact</a></li>
+    </ul>
+  </nav>
+  <form  class="formT"action="/register" method="post">
+    <label for="">Register New Device</label> <br>
+    <input type="text" name="username" id="username" placeholder="Username">
+    <input type="password" name="password" id="password" placeholder="Password">
+    <input type="submit" value="Register">
+  </form>
+</body>
+
+</html>
+<style>
+  
+    /* Global Styles */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url(second.jpg);
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Navigation Bar */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1;
+    }
+
+    .formT{
+      width:3 0%;
+      height:40%;
+      border-radius: 20px;
+      background-color: rgba(168, 149, 130, 0.771);
+    }
+    input[type="text"],
+    input[type="password"] {
+      display: block;
+      width: 100%;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      padding: 10px;
+      font-size: 1.2rem;
+      border: none;
+      border-bottom: 2px solid #ccc;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 50px;
+      animation: fadeIn 1s;
+    }
+
+    nav li {
+      margin: 0 10px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      transform: scale(1.1);
+    }
+
+    /* Login Form */
+    form {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 1s;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: black;
+      font-size: 1.2rem;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      display: block;
+      width: 100%;
+      margin-bottom: 20px;
+      padding: 10px;
+      font-size: 1.2rem;
+      border: none;
+      border-bottom: 2px solid #ccc;
+    }
+
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #3e8e41;
+    }
+
+    /* Background Blur */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url(second.jpg);
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      filter: blur(5px);
+      z-index: -1;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes scaleIn {
+      from {
+        transform: scale(0);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    body {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+</style>
