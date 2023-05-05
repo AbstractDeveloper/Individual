@@ -2,7 +2,7 @@ $('#navbar').load('navbar.html');
 $('#foot').load('footer.html');
 
 const API_URL = 'https://api-6dgz.onrender.com/api';
-const SENSOR_URL = 'http://localhost:7000';
+const SENSOR_URL = 'https://mqtt-8e8a.onrender.com';
 
 
 $.get(`${API_URL}/devices_light`)
